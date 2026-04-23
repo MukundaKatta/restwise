@@ -1,32 +1,35 @@
 # RestWise
 
-> The sleep coach your watch forgot.
+The sleep coach your watch forgot. Plug in your Oura, Whoop, or Apple Watch — get an AI coach that tells you what to actually do differently tonight.
 
-Plug in your Oura, Whoop, or Apple Watch. Get an AI coach that tells you what to actually do differently tonight.
+## Stack
 
-## What it does
+- **Next.js 15** — App Router, TypeScript strict
+- **Tailwind v4** — `@tailwindcss/postcss`, CSS-first config
+- **`next/font/google`** — Inter (replaces CDN link)
+- **pnpm** — package manager
 
-- **Personalized nightly plans** — Tonight's bedtime, caffeine cutoff, and wind-down routine. Tuned to your data.
-- **Why, not just what** — Understand the mechanism, not just a score. Learn as you sleep better.
-- **Tracks what moves the needle** — Sees which changes actually improve your deep sleep, and does more of that.
+## Routes
 
-## Why
+| Route | Description |
+|---|---|
+| `/` | Landing page — hero, demo widget, features, how-it-works, waitlist CTA |
+| `/try` | Quick check-in: hours slept, quality 1-10, caffeine cutoff time → mocked recovery score 0-100 + actionable tip |
+| `/api/waitlist` | POST `{ email }` → forwards to waitlist API with `product: "restwise"` |
 
-Health. Part of a 20-product exploration of high-demand consumer and SMB markets.
+## Run locally
+
+```bash
+pnpm install
+pnpm dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+## Deploy
+
+Push to Vercel. Next.js is auto-detected — no config changes needed. No environment variables required.
 
 ## Status
 
-Landing page live. Product in planning.
-
-- **Live**: https://mukundakatta.github.io/restwise/
-
-## Stack (when built)
-
-- Next.js 16 (App Router)
-- Supabase for auth + data
-- Stripe for payments
-- Deployed on Vercel
-
-## Local preview
-
-Just open `index.html` in a browser — it is a static landing page with the Tailwind CDN.
+**v0 skeleton** — landing page ported from static HTML, `/try` uses a mocked recovery model. No real AI integration yet.
