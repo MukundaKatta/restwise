@@ -13,26 +13,25 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
   body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
-  .hero-grad {
-    background: radial-gradient(ellipse at top, var(--tw-gradient-from) 0%, transparent 70%);
-  }
+  * { -webkit-font-smoothing: antialiased; }
 </style>
 </head>
-<body class="bg-white text-neutral-900 min-h-screen antialiased">
+<body class="bg-white text-neutral-900 min-h-screen">
 
 <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
   <a href="/" class="flex items-center gap-2 text-lg font-bold tracking-tight">
     <span class="inline-block h-2.5 w-2.5 rounded-full bg-fuchsia-500"></span>
     RestWise
   </a>
-  <a href="#waitlist" class="rounded-full bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-neutral-700">
-    Get early access
-  </a>
+  <div class="flex items-center gap-4 text-sm">
+    <a href="#demo" class="hidden sm:inline hover:opacity-70">See a demo</a>
+    <a href="#waitlist" class="rounded-full bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-neutral-700">Get early access</a>
+  </div>
 </nav>
 
 <section class="relative overflow-hidden">
   <div class="absolute inset-x-0 top-0 -z-10 h-[500px] bg-gradient-to-b from-fuchsia-100 via-fuchsia-50 to-transparent opacity-60"></div>
-  <div class="mx-auto max-w-4xl px-6 pt-20 pb-24 text-center sm:pt-28">
+  <div class="mx-auto max-w-4xl px-6 pt-20 pb-20 text-center sm:pt-28">
     <p class="mb-5 inline-block rounded-full bg-fuchsia-100 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-fuchsia-700">
       Health
     </p>
@@ -59,12 +58,51 @@
     <p id="thanks" class="mt-4 hidden text-sm font-medium text-fuchsia-700">
       Thanks. We will ping you the day we launch.
     </p>
+    <p class="mt-6 text-xs text-neutral-400">
+      Join <span class="font-semibold text-neutral-700">1,284</span> people already on the waitlist
+    </p>
   </div>
 </section>
 
-<section class="border-y border-neutral-200 bg-neutral-50 py-24">
-  <div class="mx-auto grid max-w-6xl gap-12 px-6 sm:grid-cols-3">
-    
+<!-- DEMO -->
+<section id="demo" class="border-y border-neutral-200 bg-neutral-50 py-24">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="text-center">
+      <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-fuchsia-600">Live preview</p>
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">See it in action</h2>
+    </div>
+    <div class="mt-12">
+      
+    <div class="mx-auto max-w-xl rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm text-center">
+      <div class="text-xs font-semibold uppercase tracking-wider text-fuchsia-600">Last night · Oura</div>
+      <div class="mt-4 relative mx-auto w-40 h-40">
+        <svg class="w-full h-full -rotate-90" viewBox="0 0 120 120">
+          <circle cx="60" cy="60" r="52" fill="none" stroke="#f5e1f7" stroke-width="10"/>
+          <circle cx="60" cy="60" r="52" fill="none" stroke="#d946ef" stroke-width="10"
+                  stroke-dasharray="326" stroke-dashoffset="85" stroke-linecap="round"/>
+        </svg>
+        <div class="absolute inset-0 flex flex-col items-center justify-center">
+          <div class="text-4xl font-bold">74</div>
+          <div class="text-xs text-neutral-500">Sleep score</div>
+        </div>
+      </div>
+      <div class="mt-6 rounded-2xl bg-fuchsia-50 p-4 text-left text-sm text-fuchsia-900">
+        <div class="mb-2 text-xs font-semibold uppercase tracking-wider">Tonight's plan</div>
+        <p class="leading-relaxed">You've had three straight nights under 80. Coffee after 2pm is the likely culprit — your last HRV dip correlates. Tonight: cut caffeine by 1pm, cool bedroom to 66°F, and I'll nudge you to bed at 10:20pm.</p>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="py-24">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="text-center">
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">What you get</h2>
+    </div>
+    <div class="mt-12 grid gap-12 sm:grid-cols-3">
+      
       <div>
         <div class="text-3xl">😴</div>
         <h3 class="mt-4 text-lg font-semibold tracking-tight">Personalized nightly plans</h3>
@@ -80,15 +118,45 @@
         <h3 class="mt-4 text-lg font-semibold tracking-tight">Tracks what moves the needle</h3>
         <p class="mt-2 leading-relaxed text-neutral-600">Sees which changes actually improve your deep sleep, and does more of that.</p>
       </div>
+    </div>
   </div>
 </section>
 
+<!-- HOW IT WORKS -->
+<section class="border-t border-neutral-200 bg-neutral-50 py-24">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="text-center">
+      <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-fuchsia-600">How it works</p>
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Three steps. No learning curve.</h2>
+    </div>
+    <div class="mt-12 grid gap-12 sm:grid-cols-3">
+      
+      <div class="relative">
+        <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-fuchsia-100 text-sm font-bold text-fuchsia-700">1</div>
+        <h3 class="text-lg font-semibold tracking-tight">Connect your wearable</h3>
+        <p class="mt-2 leading-relaxed text-neutral-600">Oura, Whoop, Apple Watch, Garmin. We sync the data you already have.</p>
+      </div>
+      <div class="relative">
+        <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-fuchsia-100 text-sm font-bold text-fuchsia-700">2</div>
+        <h3 class="text-lg font-semibold tracking-tight">Get tonight's plan</h3>
+        <p class="mt-2 leading-relaxed text-neutral-600">Specific. Actionable. Based on YOUR patterns, not averages.</p>
+      </div>
+      <div class="relative">
+        <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-fuchsia-100 text-sm font-bold text-fuchsia-700">3</div>
+        <h3 class="text-lg font-semibold tracking-tight">Wake up smarter</h3>
+        <p class="mt-2 leading-relaxed text-neutral-600">Small changes compound. Your deep sleep goes up. Your energy goes up.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
 <section class="mx-auto max-w-4xl px-6 py-28 text-center">
   <h2 class="text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl">
-    Sound like something you need?
+    Be the first in line.
   </h2>
   <p class="mx-auto mt-3 max-w-xl text-neutral-600">
-    Leave your email above. We will be in touch the moment we are ready to show you around.
+    Early access starts soon. Get on the list and we will reach out the moment we open the doors.
   </p>
   <a
     href="#waitlist"
